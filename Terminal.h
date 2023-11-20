@@ -10,9 +10,11 @@
 #define NCURSES_TERMINAL_H
 
 #include <string>
-//&#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #include "curses.h"
-//#endif
+#else
+#include <ncurses.h>
+#endif
 
 namespace term {
 
@@ -34,8 +36,6 @@ namespace term {
                     break;
                 case TerminalFormatter::Type::COLOR:
                     color = a;
-                    break;
-                case TerminalFormatter::Type::NOCOLOR:
                     break;
             }
         }

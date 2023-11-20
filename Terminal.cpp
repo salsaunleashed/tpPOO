@@ -161,7 +161,6 @@ namespace term {
     }
 
 
-
     Terminal::Terminal() {
         ::initscr();
         ::start_color();

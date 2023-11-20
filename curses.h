@@ -94,6 +94,7 @@ typedef unsigned long chtype;  /* 16-bit attr + 16-bit char */
 #endif
 
 #ifdef PDC_WIDE
+
 typedef chtype cchar_t;
 #endif
 
