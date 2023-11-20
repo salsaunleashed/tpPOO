@@ -5,6 +5,10 @@
 #include <iostream>
 #include <vector>
 #include "home.h"
+#include "curses.h"
+#include "Terminal.h"
+
+term::Terminal &t = term::Terminal::instance();
 
 Home::Home(int line, int col) : home_lin(line), home_col(col) {
     // Garante que as dimensões da home_grid estejam dentro dos limites
@@ -24,7 +28,8 @@ Home::~Home() {
     }
 }
 
-void Home::showHome() {
+Home Home::showHome() {
+
     for (int i = 0; i < home_lin; ++i) {
         for (int j = 0; j < home_col; ++j) {
             if (home_grid[i][j] != nullptr) {
@@ -35,6 +40,7 @@ void Home::showHome() {
         }
         std::cout << "\n";
     }
+    return Home(home_lin, home_col);
 }
 
 bool Home::addZone(int linhas, int colunas, int zone_num, std::string zone_name) {

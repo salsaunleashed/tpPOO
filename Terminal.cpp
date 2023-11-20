@@ -7,6 +7,7 @@
 // Pode ser aumentada com funcionalidades novas (desde que funcionem)
 
 #include "Terminal.h"
+#include "home.h"
 
 namespace term {
 
@@ -206,7 +207,7 @@ namespace term {
         ::refresh();
         return *this;
     }
-    Terminal& Terminal::operator<<(const char& c) {
+    Terminal& Terminal::operator<<(Home c) {
         ::printw("%c",c);
         ::refresh();
         return *this;

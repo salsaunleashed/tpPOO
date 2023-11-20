@@ -105,10 +105,10 @@ build CMakeFiles/tpPOO.dir/props.cpp.o: CXX_COMPILER__tpPOO_unscanned_Debug /cyg
 #############################################
 # Link the executable tpPOO.exe
 
-build tpPOO.exe: CXX_EXECUTABLE_LINKER__tpPOO_Debug CMakeFiles/tpPOO.dir/main.cpp.o CMakeFiles/tpPOO.dir/Terminal.cpp.o CMakeFiles/tpPOO.dir/sensor.cpp.o CMakeFiles/tpPOO.dir/processor.cpp.o CMakeFiles/tpPOO.dir/stuff.cpp.o CMakeFiles/tpPOO.dir/home.cpp.o CMakeFiles/tpPOO.dir/zone.cpp.o CMakeFiles/tpPOO.dir/props.cpp.o
+build tpPOO.exe: CXX_EXECUTABLE_LINKER__tpPOO_Debug CMakeFiles/tpPOO.dir/main.cpp.o CMakeFiles/tpPOO.dir/Terminal.cpp.o CMakeFiles/tpPOO.dir/sensor.cpp.o CMakeFiles/tpPOO.dir/processor.cpp.o CMakeFiles/tpPOO.dir/stuff.cpp.o CMakeFiles/tpPOO.dir/home.cpp.o CMakeFiles/tpPOO.dir/zone.cpp.o CMakeFiles/tpPOO.dir/props.cpp.o | /cygdrive/c/Users/ajord/OneDrive/Ambiente$ de$ Trabalho/ISEC/POO/tpPOO/pdcurses.a
   FLAGS = -g
   LINK_FLAGS = -Wl,--enable-auto-import
-  LINK_LIBRARIES = -lC:/Users/ajord/OneDrive/Ambiente  -lde  -lTrabalho/ISEC/POO/tpPOOpdcurses.a
+  LINK_LIBRARIES = "/cygdrive/c/Users/ajord/OneDrive/Ambiente de Trabalho/ISEC/POO/tpPOO/pdcurses.a"
   OBJECT_DIR = CMakeFiles/tpPOO.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -121,7 +121,7 @@ build tpPOO.exe: CXX_EXECUTABLE_LINKER__tpPOO_Debug CMakeFiles/tpPOO.dir/main.cp
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/cygdrive/c/Users/ajord/OneDrive/Ambiente de Trabalho/ISEC/POO/tpPOO/cmake-build-debug" && /cygdrive/c/Users/ajord/AppData/Local/JetBrains/CLion2023.2/cygwin_cmake/bin/cmake.exe -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = /bin/sh CMakeFiles/edit_cache.dir/utility.sh 750bf7c7d75eb791
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -132,7 +132,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd "/cygdrive/c/Users/ajord/OneDrive/Ambiente de Trabalho/ISEC/POO/tpPOO/cmake-build-debug" && /cygdrive/c/Users/ajord/AppData/Local/JetBrains/CLion2023.2/cygwin_cmake/bin/cmake.exe --regenerate-during-build -S"/cygdrive/c/Users/ajord/OneDrive/Ambiente de Trabalho/ISEC/POO/tpPOO" -B"/cygdrive/c/Users/ajord/OneDrive/Ambiente de Trabalho/ISEC/POO/tpPOO/cmake-build-debug"
+  COMMAND = /bin/sh CMakeFiles/rebuild_cache.dir/utility.sh 7f2cc483bedc2457
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1

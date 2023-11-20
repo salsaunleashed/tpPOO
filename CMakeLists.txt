@@ -21,4 +21,4 @@ add_executable(tpPOO main.cpp
         props.cpp
         props.h)
 
-target_link_libraries(${PROJECT_NAME} C:/Users/ajord/OneDrive/Ambiente de Trabalho/ISEC/POO/tpPOOpdcurses.a)
+target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/pdcurses.a)

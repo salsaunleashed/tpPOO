@@ -16,7 +16,7 @@ public:
 
     bool addZone(int linhas, int colunas, int home_num, std::string zone_name);
 
-    void showHome();
+    Home showHome();
 
 private:
     int home_lin;

@@ -7,18 +7,24 @@
 // Pode ser aumentada com funcionalidades novas (desde que funcionem)
 
 #include <string>
-//#include "curses.h"
+#include "curses.h"
 #include "home.h"
+#include "Terminal.h"
+
+using namespace term;
 
 int main() {
 
-    Home Home(3, 3);
+    Terminal &t = Terminal::instance();
+    Home h = Home(3, 3);
 
-    Home.addZone(1, 2, 1, "quarto");
-    Home.addZone(0, 2, 0, "sala");
-    Home.addZone(2, 1, 2, "wc");
+    h.addZone(1, 2, 1, "quarto");
+    h.addZone(0, 2, 0, "sala");
+    h.addZone(2, 1, 2, "wc");
 
-    Home.showHome();
+    t << move_to(10, 10) << set_color(2) << "Grelha" << h.showHome();
+    refresh();
+    t.getchar();
 
     return 0;
 }
