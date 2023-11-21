@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-#include "curses.h"
 #include "home.h"
 #include "zone.h"
 
@@ -17,5 +16,4 @@ int Zone::getNumero() const {
 
 void Zone::showZoneInfo() const {
     std::cout << "Zona " << zone_num << "    " << zone_name << "   |";
-
 }// zone

@@ -10,11 +10,8 @@
 #define NCURSES_TERMINAL_H
 
 #include <string>
-//#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+//&#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #include "curses.h"
-#include "home.h"
-//#else
-//#include <ncurses.h>
 //#endif
 
 namespace term {
@@ -38,7 +35,7 @@ namespace term {
                 case TerminalFormatter::Type::COLOR:
                     color = a;
                     break;
-                case Type::NOCOLOR:
+                case TerminalFormatter::Type::NOCOLOR:
                     break;
             }
         }
@@ -97,7 +94,7 @@ namespace term {
         Terminal& operator<<(const std::string& str);
         Terminal& operator<<(const int& i);
         Terminal& operator<<(const double& d);
-        Terminal& operator<<(Home c);
+        Terminal& operator<<(const char& c);
 
         Terminal& operator>>(char& c);
         Terminal& operator>>(std::string& str);
@@ -118,5 +115,6 @@ namespace term {
     };
 
 }
+
 
 #endif //NCURSES_TERMINAL_H

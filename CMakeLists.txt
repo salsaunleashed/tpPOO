@@ -1,9 +1,9 @@
-cmake_minimum_required(VERSION 3.25)
-project(tpPOO)
+cmake_minimum_required(VERSION 3.26)
+project(TP_POO)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 
-add_executable(tpPOO main.cpp
+add_executable(TP_POO main.cpp
         curses.h
         Terminal.cpp
         Terminal.h
@@ -19,6 +19,8 @@ add_executable(tpPOO main.cpp
         zone.cpp
         zone.h
         props.cpp
-        props.h)
+        props.h
+        aparelho.cpp
+        aparelho.h)
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/pdcurses.a)
