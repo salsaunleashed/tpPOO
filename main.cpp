@@ -22,7 +22,7 @@ int main() {
     h.addZone(0, 2, 0, "sala");
     h.addZone(2, 1, 2, "wc");
 
-    t << move_to(10, 10) << set_color(2) << "Grelha" << h.showHome();
+    t << move_to(10, 10) << set_color(2) << h.showHome();
     refresh();
     t.getchar();
 

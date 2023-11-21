@@ -208,7 +208,7 @@ namespace term {
         return *this;
     }
     Terminal& Terminal::operator<<(Home c) {
-        ::printw("%c",c);
+        ::printw("%c");
         ::refresh();
         return *this;
     }

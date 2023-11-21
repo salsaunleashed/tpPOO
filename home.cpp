@@ -4,8 +4,8 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include "home.h"
-#include "curses.h"
 #include "Terminal.h"
 
 term::Terminal &t = term::Terminal::instance();
