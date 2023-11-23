@@ -217,6 +217,10 @@ namespace term {
         return *this;
     }
 
+    Terminal& Terminal::operator<<(const Home) {
+
+    };
+
     Terminal& Terminal::operator>>(std::string& str) {
         ::noecho();
         ::cbreak();
@@ -285,6 +289,5 @@ namespace term {
     int Terminal::getNumRows() {
         return LINES;
     }
-
 
 }

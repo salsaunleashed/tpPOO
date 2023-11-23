@@ -24,41 +24,31 @@ int sens::sensor::sensID = 0;
 int apar::aparelho::aparID = 0;
 
 term::Terminal &t = term::Terminal::instance();
-term::Window win = term::Window(5, 4, 30, 4);
+term::Window win = term::Window(5, 4, 30, 15);
+Home hm = Home(3, 3);
 
 int main() {
 
-    Home Home(3, 3);
+    hm.addZone(1, 2, 1, "quarto");
+    hm.addZone(0, 2, 0, "sala");
+    hm.addZone(2, 1, 2, "wc");
 
-    Home.addZone(1, 2, 1, "quarto");
-    Home.addZone(0, 2, 0, "sala");
-    Home.addZone(2, 1, 2, "wc");
-
-    Home.showHome();
-
-    std::vector<proc::processor> vproc;
+    std::vector<proc::processor *> vproc;
+    std::vector<sens::sensor *> vsens;
 
     proc::processor a;
     proc::processor b;
     proc::processor c;
     proc::processor d;
-    std::cout << "processador a com ID: " << a.pID << std::endl;
-    std::cout << "processador b com ID: " << b.pID << std::endl;
-    std::cout << "processador c com ID: " << c.pID << std::endl;
-    std::cout << "processador d com ID: " << d.pID << std::endl;
 
-/*    t << term::move_to(50, 1) << "Processador a com ID: " << a.pID;
-    refresh();
-    t << term::move_to(50, 2) << "Processador a com ID: " << b.pID;
-    refresh();
-    t << term::move_to(50, 3) << "Processador a com ID: " << c.pID;
-    refresh();
-    t << term::move_to(50, 4) << "Processador a com ID: " << d.pID;
-    refresh();
-    t.getchar();*/
+    vproc.push_back(new proc::processor(a));
+    vproc.push_back(new proc::processor(b));
+    vproc.push_back(new proc::processor(c));
+    vproc.push_back(new proc::processor(d));
 
-    for(int i = 0; i < 4; i++){
-        t << term::move_to(50, i) << "Processador a com ID: " << a.pID;
+    for (int i = 0; i < 4; i++) {
+        t << term::move_to(49, 0) << "Processadores:";
+        t << term::move_to(50, i + 1) << term::set_color(2) << "Processador com ID: " << vproc[i]->pID;
         refresh();
     }
 
@@ -66,16 +56,22 @@ int main() {
     sens::sensor f;
     sens::sensor g;
     sens::sensor h;
-    std::cout << "sensor e com ID: " << e.sID << std::endl;
-    std::cout << "sensor f com ID: " << f.sID << std::endl;
-    std::cout << "sensor g com ID: " << g.sID << std::endl;
-    std::cout << "sensor h com ID: " << h.sID << std::endl;
 
-    for(int i = 0; i < 4; i++){
-        t << term::move_to(50, i + 10) << "sensor e com ID: " << e.sID;
+    vsens.push_back(new sens::sensor(e));
+    vsens.push_back(new sens::sensor(f));
+    vsens.push_back(new sens::sensor(g));
+    vsens.push_back(new sens::sensor(h));
+
+
+    for (int i = 0; i < 4; i++) {
+        t << term::move_to(149, 0) << "Sensores:";
+        t << term::move_to(150, i + 1) << term::set_color(5) << "sensor com ID: " << vsens[i]->sID;
         refresh();
     }
+
     t.getchar();
+
+    hm.showHome();
 
     apar::aparelho i = apar::aparelho('a');
     apar::aparelho j = apar::aparelho('s');

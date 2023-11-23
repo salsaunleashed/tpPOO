@@ -13,6 +13,8 @@
 //&#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
 #include "curses.h"
 //#endif
+#include "home.h"
+#include "zone.h"
 
 namespace term {
 
@@ -44,6 +46,7 @@ namespace term {
         int x, y;
         int color;
 
+        friend class Home;
         friend class Terminal;
         friend class Window;
     };
@@ -95,6 +98,7 @@ namespace term {
         Terminal& operator<<(const int& i);
         Terminal& operator<<(const double& d);
         Terminal& operator<<(const char& c);
+        Terminal& operator<<(const Home);
 
         Terminal& operator>>(char& c);
         Terminal& operator>>(std::string& str);

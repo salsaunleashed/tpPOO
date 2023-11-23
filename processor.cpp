@@ -17,4 +17,6 @@ namespace proc {
     processor::~processor() {
 
     }
+
+    //static std::vector<processor*> vecProc;
 } // proc
